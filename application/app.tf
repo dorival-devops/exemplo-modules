@@ -11,7 +11,8 @@ resource "aws_vpc" "jlearning" {
  #   }
 
 resource "aws_subnet" "main" {
-  vpc_id     = "jlearning"
+  #vpc_id     = "jlearning"
+  vpc_id     = "${aws_vpc.jlearning.id}"
   cidr_block = "11.0.1.0/24"
 
   tags = {
